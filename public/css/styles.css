@@ -1,0 +1,106 @@
+body{
+	background-color: #ffffff;
+
+}
+#contendor{
+
+
+}
+#carrito{
+	padding: 16px;
+  text-align: center;
+	background-color: #ffffff;
+  margin-top: 25px;
+	border: black 1px solid;
+
+
+}
+#tuPedido{
+  position: relative;
+	left: 170px;
+
+	bottom: 30px;
+	font-size: "7";
+}
+#tabla{
+	position: relative;
+	left: 170px;
+	width: 200%;
+
+}
+#comprar{
+	position: relative;
+	left: 170px;
+}
+#cancelar{
+	position: relative;
+	left: 170px;
+}
+#total{
+	position: relative;
+	left: 170px;
+}
+#pedido{
+	padding: 60px;
+}
+#carrito h2{
+	color: #000000;
+}
+#carrito p{
+	color: #000000;
+}
+#items{
+	background-color: #ffffff;
+	border: #8ed3cc 2px solid;
+	padding: 16px;
+	left: 170px;
+
+
+}
+
+.img-fluid{
+
+   border: #8ed3cc 1px solid;
+}
+
+#precioCompra{
+	bottom: -60px;
+	position: relative;
+	font-size: "7";
+
+}
+.card-body{
+	padding: 16px;
+  text-align: center;
+	background-color: #ffffff;
+  margin-top: 25px;
+	border: #8ed3cc 5px solid;
+	border-radius: 15px;
+
+}
+.card col-sm-4{
+	padding: 16px;
+  text-align: center;
+	border-radius: 15px;
+}
+
+
+.navegacion{
+     background-color: #8ed3cc;
+}
+
+.nav-link:hover{
+	background-color: #49A1D5;
+	color:#000000;
+	border-radius: 15px;
+
+}
+
+
+
+.btn-primary:hover{
+    background-color: #39a69b;
+
+}
+
+/*footer*/
