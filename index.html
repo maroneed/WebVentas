@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -24,22 +26,20 @@
               <div class="collapse navbar-collapse w-100" id="nav_principal">
                   <ul class="nav nav-justified  w-100 flex-column flex-sm-row">
                     <li class="nav-item">
-                      <a href="#" class="nav-link">Inicio</a>
+                      <a href="#" class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item">
-                      <a href="views/nosotros.html" class="nav-link">Nosotros</a>
+                      <a href="#" class="nav-link">NOSOTROS</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">PRODUCTOS</a>
                     </li>
                     <li class="nav-item">
-                      <a  href="#" class="nav-link">Servicios</a>
+                      <a href="#" class="nav-link">CONTACTO</a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link" src="/img/carrito.png"><img src="/img/carrito.png" width="50" height="50"><label id="valor"></label></a>
+                      <a href="views/carrito.html" class="nav-link" src="/img/carrito.png"><img src="/img/carrito.png" width="50" height="50"><label id="valor"></label></a>
                     </li>
                   </ul>
               </div>
@@ -49,32 +49,36 @@
    <div class="container my-5 text-center" id="contenedor">
       <div id="items" class="col-sm-8 row"></div>
       <main id="pedido" class="col-sm-8 row">
-        <h1 id="tuPedido">TU PEDIDO</h1>
-        <table class="table" id="tabla">
-                    <thead>
-                        <tr>
-                            <th scope="col">Código</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col"></th>
 
-                        </tr>
-                    </thead>
-                    <tbody id="canasta">
-                      <tr>
-                          <th scope="row"></th>
-                          <th ></td>
-                          <th ></td>
-                          <th></td>
-                      </tr>
-                    </tbody>
-                </table>
-                <label id="precioCompra">Total: </label>
-                <h1 id="total" value=""></h1>
-                <button class="btn btn-primary" onclick="confirmarCompra()" id="comprar">COMPRAR</button>
-                <button class="btn btn-danger" onclick="cancelarCompra()" id="cancelar">CANCELAR</button>
       </main>
      </div>
+     <footer id="footer">
+         <div class="container">
+             <div class="row">
+                 <div class="col-xs-12 text-center">
+                   <hr id="linea" />
+                   <h3 id= "seguinos"class="all-titles-pages">SE PARTE DE NUESTRA COMUNIDAD</h3>
+                     <ul id = "redes" class="list-unstyled">
+                         <li class="list-social">
+                             <p><a href="#"><i class="fa fa-twitter"><img src="/img/twitter.svg" width="50" height="50"></i></a></p>
+                         </li>
+                         <li class="list-social">
+                             <p><a href="#"><i class="fa fa-facebook"><img src="/img/facebook.svg" width="50" height="50"></i></a></p>
+                         </li>
+                         <li class="list-social">
+                             <p><a href="#"><i class="fa fa-google-plus"><img src="/img/youTube.svg" width="50" height="50"></i></a></p>
+                         </li>
+                         <li class="list-social">
+                             <p><a href="#"><i class="fa fa-youtube"><img id= "redes4"src="/img/instagram.svg" width="50" height="50"></i></a></p>
+                         </li>
+                     </ul>
+                 </div>
+                 <div class="col-xs-12">
+                     <h3 id="marca"class="text-center all-titles-pages">Gabriel Appella &copy; 2020</h3><br>
+                 </div>
+             </div>
+         </div>
+     </footer>
 
 
   </body>

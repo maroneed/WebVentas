@@ -2,18 +2,40 @@ body{
 	background-color: #ffffff;
 
 }
-#contendor{
+#redes4:hover{
+	background-color: #49A1D5;
 
-
+}
+#footer{
+	position: relative;
+  bottom: -60px;
+}
+#linea{
+	position: relative;
+  bottom: 60px;
+}
+#redes li {
+     display:inline-block;
+     padding-left:50px;
+     padding-right:50px;
 }
 #carrito{
 	padding: 16px;
   text-align: center;
-	background-color: #ffffff;
+	background-color: #000000;
   margin-top: 25px;
 	border: black 1px solid;
 
 
+}
+#marca{
+
+	font-size: 100%;
+}
+#seguinos{
+	position: relative;
+  bottom: 60px;
+	font-size: "7";
 }
 #tuPedido{
   position: relative;

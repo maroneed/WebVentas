@@ -9,6 +9,33 @@
     var objetivo = document.getElementById('valor');
     var precio = 0;
     var pedido = [];
+    var orden = [];
+    var lista = new Array();
+    var listaAux = localStorage.getItem("carritoJson");
+    var carritoJson = JSON.parse(listaAux);
+    if(carritoJson != null)
+    {
+      lista = carritoJson;
+      
+    }
+    console.log(carritoJson);
+    console.log(lista);
+
+    //prueba de arrays
+    var uno = {"nombre":"gaby","appellido":"appella"};
+    var dos = {"nombre":"gil","appellido":"manguera"};
+    var tres = {"nombre":"octavio","appellido":"zelaya"};
+    order = orden.push(uno);
+    order = orden.push(dos);
+    order = orden.push(tres);
+    //lista = lista.concat(uno);
+    //lista = lista.concat(dos);
+    //lista = lista.concat(tres);
+    //localStorage.setItem('lista',JSON.stringify(lista));
+
+    //console.log(orden);
+    //console.log(lista);
+
 
     fetch('https://localhost:44371/api/Producto')
     .then((respuesta) => {
@@ -170,89 +197,18 @@ function agregarProducto(){
   console.log("localstorage: " + dato);
   console.log("precioFinal: " + precioProducto);
   console.log("precioProducto: " + precioFinal);
-
+  var detalle = {"codigo" : element,"nombre":nombreProducto,"precio":precioProducto}
+  lista = lista.concat(detalle);
+  localStorage.setItem('lista',JSON.stringify(lista));
+  localStorage.setItem('pedido',JSON.stringify(pedido));
+  console.log("ids: " +  pedido);
+  localStorage.setItem('carrito',JSON.stringify(pedido));
 
   //agrego a la tabla de Compra
   //montoFloat = parseFloat(precioFinal);
   console.log("float: " + precioFinal);
+  console.log("pedido: " + pedido);
+  console.log(lista)
 
-  total.innerHTML = "$ " + precioFinal;
-
-  canasta.innerHTML += `
-
-            <tr>
-                <th id="Id">${ element}</th>
-                <th id="nombre">${nombreProducto }</td>
-                <th id="plata">${precioProducto }</td>
-
-
-
-                <th id=""><button type="button" id="boton2" class="btn btn-danger" onclick="eliminarProducto(${element},${precioProducto })"<img
-                src="/img/carrito.png" position="relative" right= 300px/>X</button></td>
-            </tr>
-
-            `
-
-}
-
-
-function eliminarProducto(element,precioProducto)
-{
-  var x = document.getElementById("boton2").getAttribute("marcador");
-  var articulo = String(element); //convierto el id en string
-  var index = pedido.indexOf(articulo); //busco el indice que coincide con lo que busco
-  if (index > -1) {
-     pedido.splice(index, 1);  //lo elimino si el indice existe. el 1 es la cantidad de ele que eliminara desde el indice que le marque
-  }
-  console.log("a eliminar(id): "+articulo);
-  console.log("pedido modificado: "+pedido);
-  var numero = parseFloat(precioProducto);
-  var numeroLimitado = numero.toFixed(2);
-  carrito = carrito-1;
-  if (carrito<0)
-  {
-    carrito = 0;
-  }
-  document.getElementById("valor").innerHTML = carrito;  //actualizo el carrito
-  precioFinal = parseFloat(precioFinal) - parseFloat(precioProducto);
-  var precioFinalDecimal = precioFinal.toFixed(2);
-//  if (precioFinal<0)
-//  {
-//    precioFinal = 0;
-//    total.innerHTML = precioFinal;
-//  }
-  if(precioFinalDecimal <= 0)
-  {
-    total.innerHTML = " ";
-  }else{
-    total.innerHTML = "$ " + precioFinalDecimal;
-    console.log("valor producto eliminado: "+precioProducto);
-  }
-
-
-
-  $(document).on('click','#boton2',function(event){
-    event.preventDefault();
-    $(this).closest('tr').remove();
-
-  })
-}
-
-function cancelarCompra()
-{
-    pedido = [];
-    carrito = 0;
-    precioFinal = 0;
-    document.getElementById("valor").innerHTML = carrito; //actualizo el carrito
-    console.log(pedido);
-    canasta.innerHTML = "";
-    PromptDemo();
-    total.innerHTML = "";
-
-}
-
-function PromptDemo() {
-  //Ingresamos un mensaje a mostrar
-  var aviso = alert("Venta cancelada!");
 
 }
