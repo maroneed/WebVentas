@@ -41,7 +41,7 @@ function volcarProductosAlCarrito()
               precioFinal = parseFloat(precioFinal,10) + precio;
   }
   console.log('precioFinal: ' + precioFinal)
-  document.getElementById("total").innerHTML = precioFinal;  //actualizo el carrito
+  document.getElementById("total").innerHTML = "$ " + precioFinal;  //actualizo el carrito
   localStorage.setItem('carritoJson',JSON.stringify(carritoJson));
 
 

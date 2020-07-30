@@ -13,28 +13,11 @@
     var lista = new Array();
     var listaAux = localStorage.getItem("carritoJson");
     var carritoJson = JSON.parse(listaAux);
-    if(carritoJson != null)
-    {
-      lista = carritoJson;
-      
-    }
+    checkLocalStorage(lista);   //consulto el localStorage,por si tiene algo guardado al venir de la otra vista
     console.log(carritoJson);
     console.log(lista);
 
-    //prueba de arrays
-    var uno = {"nombre":"gaby","appellido":"appella"};
-    var dos = {"nombre":"gil","appellido":"manguera"};
-    var tres = {"nombre":"octavio","appellido":"zelaya"};
-    order = orden.push(uno);
-    order = orden.push(dos);
-    order = orden.push(tres);
-    //lista = lista.concat(uno);
-    //lista = lista.concat(dos);
-    //lista = lista.concat(tres);
-    //localStorage.setItem('lista',JSON.stringify(lista));
 
-    //console.log(orden);
-    //console.log(lista);
 
 
     fetch('https://localhost:44371/api/Producto')
@@ -70,7 +53,7 @@
             miNodo.classList.add('card', 'col-sm-4');
             // Body
             let miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('card-body');
+            miNodoCardBody.classList.add('card-body','col-sm-12');
             // Titulo
             let miNodoTitle = document.createElement('h5');
             miNodoTitle.classList.add('card-title');
@@ -211,4 +194,13 @@ function agregarProducto(){
   console.log(lista)
 
 
+}
+
+function checkLocalStorage(referencia)
+{
+  if(carritoJson != null)
+  {
+    referencia = carritoJson;
+
+  }
 }
