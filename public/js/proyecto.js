@@ -15,7 +15,12 @@
     var carritoJson = JSON.parse(listaAux);
     checkLocalStorage(lista);   //consulto el localStorage,por si tiene algo guardado al venir de la otra vista
     console.log(carritoJson);
+    var pedidoAux = localStorage.getItem("arrayIds");
+    var pedidoJson = JSON.parse(pedidoAux);
+    checkLocalStorageIds();
     console.log(lista);
+    console.log(pedidoJson);
+
 
 
 
@@ -196,11 +201,17 @@ function agregarProducto(){
 
 }
 
-function checkLocalStorage(referencia)
+function checkLocalStorage()
 {
   if(carritoJson != null)
   {
-    referencia = carritoJson;
-
+      lista = carritoJson;
+  }
+}
+function checkLocalStorageIds()
+{
+  if(pedidoJson != null)
+  {
+      pedido = pedidoJson;
   }
 }

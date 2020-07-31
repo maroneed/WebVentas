@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Raleway:400,700,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/stylesPresentacion.css">
+    <link rel="stylesheet" href="/css/stylesCarrito.css">
 <title>GA</title>
 
 </head>
@@ -26,18 +27,17 @@
                 <a href="/../../" class="nav-link">INICIO</a>
               </li>
               <li class="nav-item">
-                <a href="views/nosotros.html" class="nav-link">NOSOTROS</a>
+                <a href="" class="nav-link">NOSOTROS</a>
               </li>
 
                   <li class="nav-item">
                     <a href="productos.html" class="nav-link">PRODUCTOS</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="#" class="nav-link">CONTACTO</a>
+                    <a  href="contacto.html" class="nav-link">CONTACTO</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link" src=
-"/img/carrito.png"><img src="/img/carrito.png" width="50" height="50"><label id="valor"></label></a>
+                    <a href="#" class="nav-link" src="/img/carrito.png"><img src="/img/carrito.png" width="50" height="50"><label id="valor"></label></a>
                   </li>
                 </ul>
             </div>
@@ -72,9 +72,75 @@
               <button class="btn btn-primary" onclick="confirmarCompra()" id="comprar">COMPRAR</button>
               <button class="btn btn-danger" onclick="cancelarCompra()" id="cancelar">CANCELAR</button>
     </main>
+    <!-- Modal compra exitosa-->
 
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="alert alert-success" role="alert">
+            <h3 class="alert-heading" align="center">TRAMITE REALIZADO!</h4>
+            <hr>
+            <h5>Datos del registro:</label>
+            <br>
+            <br>
+            <span class = "registro" id="m1p1" value=""></span>
+            <br>
+            <br>
+            <span class = "registro" id="m1p2" value=""></span>
+            <br>
+            <br>
+            <span class = "registro" id="m1a1" value=""></span>
+            <br>
+            <br>
+            <span class = "registro" id="m1s1" value=""></span>
+            <hr>
+            <span>Se han registrado los datos exitosamente.</strong>
+          </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal compra cancelada-->
 
+    <div id="myModal2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="alert alert-danger" role="alert">
+            <h3 class="alert-heading" align="center">Tramite no realizado!</h4>
+            <hr>
+            <h5>Atención:</label>
+            <br>
+            <br>
+            <p id= "mensaje"class = "registro">Chequee los datos y vuelva a intentarlo</p>
+            <hr>
+            <span>Los datos no han sido almacenados con exito.</strong>
+          </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal carrito vacio-->
+
+    <div id="myModal3" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="alert alert-warning " role="alert">
+            <h3 id="titulo"class="alert-heading" align="center">TRAMITE YA EXISTENTE!</h4>
+            <hr>
+            <img id = "warning" src=/img/warning.png width="300" height="300">
+            <span class = "registro" id="m1s1" value=""></span>
+            <hr>
+            <span id ="comentario">Se identifico un divorcio existe en la base de datos con referencia a ese acta de matrimonio.</strong>
+          </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
    </div>
+  </div>
 
 
 </body>

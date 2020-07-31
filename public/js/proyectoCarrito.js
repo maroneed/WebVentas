@@ -15,6 +15,8 @@ volcarProductosAlCarrito();
 console.log("arrays de ids: " + arrayIds);
 console.log("arrays de ids: " + arrayIds);
 console.log(orden);
+console.log(arrayIds);
+
 
 
 function volcarProductosAlCarrito()
@@ -43,6 +45,7 @@ function volcarProductosAlCarrito()
   console.log('precioFinal: ' + precioFinal)
   document.getElementById("total").innerHTML = "$ " + precioFinal;  //actualizo el carrito
   localStorage.setItem('carritoJson',JSON.stringify(carritoJson));
+  localStorage.setItem('arrayIds',JSON.stringify(arrayIds));
 
 
 }
@@ -53,8 +56,12 @@ function eliminarProducto(element,precioProducto)
   var x = document.getElementById("boton2").getAttribute("marcador");
   var articulo = String(element); //convierto el id en string
   var index = arrayIds.indexOf(articulo); //busco el indice que coincide con lo que busco
+
+
   if (index > -1) {
      arrayIds.splice(index, 1);  //lo elimino si el indice existe. el 1 es la cantidad de ele que eliminara desde el indice que le marque
+
+     console.log("hola");
   }
   console.log("arrays de ids: " + arrayIds);
 
@@ -70,11 +77,7 @@ function eliminarProducto(element,precioProducto)
   document.getElementById("valor").innerHTML = carrito.length;  //actualizo el carrito
   precioFinal = parseFloat(precioFinal) - parseFloat(precioProducto);
   var precioFinalDecimal = precioFinal.toFixed(2);
-//  if (precioFinal<0)
-//  {
-//    precioFinal = 0;
-//    total.innerHTML = precioFinal;
-//  }
+
   if(precioFinalDecimal <= 0)
   {
     total.innerHTML = " ";
@@ -90,6 +93,54 @@ function eliminarProducto(element,precioProducto)
     $(this).closest('tr').remove();
 
   })
+
+  console.log(articulo)
+  var respaldoStorage = localStorage.getItem('lista');
+  var respaldoJson = JSON.parse(respaldoStorage);
+
+  var respaldoStorageIds = localStorage.getItem('pedido');
+  var respaldoIdsJson = JSON.parse(respaldoStorageIds);
+
+  var index2 = respaldoJson.indexOf(articulo); //busco el indice que coincide con lo que busco
+  var i = respaldoIdsJson.indexOf( articulo );  //borro el producto del array de ids que pasare como pedido al concretar la compra
+    if ( i !== -1 ) {
+        respaldoIdsJson.splice( articulo, 1 );
+        console.log(articulo)
+
+    }
+    console.log(arrayIds)
+
+    localStorage.removeItem("pedido");
+    localStorage.removeItem("arrayIds");
+    localStorage.setItem('pedido',JSON.stringify(arrayIds));
+    localStorage.setItem('arrayIds',JSON.stringify(arrayIds));
+  for (var i in respaldoJson)
+  {
+    const element = respaldoJson[i];
+    if( element.codigo == articulo)
+    {
+
+         let indice = respaldoJson.findIndex(i => i.codigo === element.codigo);
+         console.log('indice a borrar: ' + indice);
+         console.log(element.codigo)
+
+
+         respaldoJson.splice(indice, 1);
+         console.log(respaldoJson);
+         localStorage.removeItem("lista");
+         localStorage.removeItem("carritoJson");
+
+         localStorage.setItem('lista',JSON.stringify(respaldoJson));
+         localStorage.setItem('carritoJson',JSON.stringify(respaldoJson));
+         //console.log(respaldoJson);
+         //console.log(carritoJson);
+
+
+
+    }
+
+  }
+
 
 }
 
@@ -114,6 +165,7 @@ function confirmarCompra()
     .then(function(compra) {
         console.log(compra)
         var aviso = alert("Venta exitosa!");
+        //compraOk();
         localStorage.clear();
         total.innerHTML = "";
         canasta.innerHTML = "";
@@ -149,5 +201,10 @@ function cancelarCompra()
 function PromptDemo() {
   //Ingresamos un mensaje a mostrar
   var aviso = alert("Venta cancelada!");
+
+}
+function compraOk()
+{
+  $('#myModal').modal('show');
 
 }

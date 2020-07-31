@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -26,71 +26,96 @@
               <div class="collapse navbar-collapse w-100" id="nav_principal">
                   <ul class="nav nav-justified  w-100 flex-column flex-sm-row">
                     <li class="nav-item">
-                      <a href="" class="nav-link">INICIO</a>
+                      <a href="/../.." class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item">
                       <a href="#" class="nav-link">NOSOTROS</a>
                     </li>
 
                     <li class="nav-item">
-                      <a href="views/productos.html" class="nav-link">PRODUCTOS</a>
+                      <a href="productos.html" class="nav-link">PRODUCTOS</a>
                     </li>
                     <li class="nav-item">
-                      <a href="views/contacto.html" class="nav-link">CONTACTO</a>
+                      <a href="" class="nav-link">CONTACTO</a>
                     </li>
                     <li class="nav-item">
-                      <a href="views/carrito.html" class="nav-link" src="/img/carrito.png"><img src="/img/carrito.png" width="50" height="50"><label id="valor"></label></a>
+                      <a href="carrito.html" class="nav-link" src="/img/carrito.png"><img src="/img/carrito.png" width="50" height="50"><label id="valor"></label></a>
                     </li>
                   </ul>
               </div>
         </div>
       </nav>
    </div>
-   <div class="container my-5 text-center" id="contenedor">
-     <div id="carousel-id" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-id" src="/../img/custom1.jpg" width="50" height="50" data-slide-to="0" class=""></li>
-      <li data-target="#carousel-id" src="/../img/custom2.jpg" width="50" height="50" data-slide-to="1" class=""></li>
-      <li data-target="#carousel-id" src="/../img/custom3.jpg" width="50" height="50" data-slide-to="2" class="active"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item">
-        <img class="imagen" data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="/../img/custom10.jpg" width="1000" height="700">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1 id= "c1">Lo que usan las leyendas</h1>
+   <div class="container my-5 text-center" id="contacto">
 
+      <div class="row" id="formulario">
+
+
+            <div id ="primeraPersona"class="col-md-12" >
+                <h2 id="contactate">CONTACTATE CON NOSOTROS !</h2>
+                <hr />
+                <div class="input-group input-group-sm mb-6">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="nombre">NOMBRE</span>
+                  </div>
+                  <input  id="nombre2" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="" >
+                </div>
+                <label id="campleteDni1" value=""></label>
+
+
+                <div class="input-group input-group-sm mb-3" id="N1">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="apellido">APPELIDO</span>
+                  </div>
+                  <input  id="apellido2" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="">
+                </div>
+                <label id="campleteNombre1" value=""></label>
+                <div class="input-group input-group-sm mb-3" id="N1">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="mail">MAIL</span>
+                  </div>
+                  <input  id="mail2" type="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="">
+                </div>
+                <label id="campleteNombre1" value=""></label>
+                <div class="input-group input-group-sm mb-12" id="N1">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="telefono">TELEFONO</span>
+                  </div>
+                  <input  id="telefono2" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="">
+                </div>
+                <label id="campleteNombre1" value=""></label>
+           </div>
+
+           <div id ="alertaMensaje"class="col-md-12">
+             <div id="alerta" class="alert alert-primary alert-dismissible  collapse" role="alert" data-dismiss="alert">
+               <h5>TRAMITE REGISTRADO ! </label>
+               <br>
+               <hr>
+               <span class = "registro" id="1dat" value=""></span>
+               <br>
+               <br>
+               <span class = "registro" id="2dat" value=""></span>
+
+               <hr>
+               <span>El tramite fue resgistrada exitosamente.</strong>
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
           </div>
-        </div>
-      </div>
-      <div class="item">
-        <img class="imagen" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="/../img/custom17.jpg" width="1000" height="700">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1 id= "c3">Productos tope de gama</h1>
 
-          </div>
-        </div>
-      </div>
-      <div class="item active">
-        <img class="imagen" data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="/../img/custom15.jpg" width="1000" height="1000" >
-        <div class="container">
-          <div class="carousel-caption">
-            <h1 id= "c2">Series Custom Shop</h1>
 
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-  </div>
 
+        <button type="button" id="enviar"class="btn btn-success" data-toggle="modal" onclick="ConfirmarDefuncion()">ENVIAR</button>
 
 
 
      </div>
-     <footer id="footer">
+     <div>
+       <img src="/../img/slash.jpg" id="fotoContacto">
+     </div>
+    </div>
+     <footer id="footerContacto">
          <div class="container">
              <div class="row">
                  <div class="col-xs-12 text-center">
@@ -114,16 +139,12 @@
                  <div class="col-xs-12">
                      <h3 id="marca"class="text-center all-titles-pages">Gabriel Appella &copy; 2020</h3><br>
                  </div>
-             </div>
-         </div>
+
      </footer>
 
 
   </body>
-  <!-- jQuery -->
-  <script src="//code.jquery.com/jquery.js"></script>
-  <!-- Bootstrap JavaScript -->
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 
 
 </html>
